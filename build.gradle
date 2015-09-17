@@ -1,0 +1,30 @@
+buildscript {
+  repositories {
+    //jcenter()
+    maven {
+      url "https://jcenter.bintray.com"
+    }
+  }
+  dependencies {
+    classpath "org.grails:grails-gradle-plugin:3.0.6"
+  }
+}
+
+apply plugin: "grails"
+
+version = 1.0
+
+grails {
+  grailsVersion = '2.4.4'
+  groovyVersion = '2.3.7'
+  springLoadedVersion '1.2.0.RELEASE'
+}
+
+repositories {
+  grails.central() //creates a maven repo for the Grails Central repository (Core libraries and plugins)
+}
+
+dependencies {
+  bootstrap "org.grails.plugins:tomcat:7.0.55" // No container is deployed by default, so add this
+  compile 'org.grails.plugins:asset-pipeline:1.9.9' // Just an example of adding a Grails plugin
+}
