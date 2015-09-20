@@ -25,23 +25,23 @@
 ###### Available commands:
 **create user**
 ```
-curl -i -X POST -H "Content-Type: application/json" -d '{"uid":111,"email":"alice@mail.com","name":"Alice"}' localhost:8080/myapp/user
+curl -i -X POST -H "Content-Type: application/json" -d '{"uid":111,"email":"alice@mail.com","name":"Alice"}' localhost:8080/myapp/api/user
 ```
 
 **list all users**
 ```
-curl -X GET -H "Accept: application/json" localhost:8080/myapp/user
+curl -X GET -H "Accept: application/json" localhost:8080/myapp/api/user
 ```
 
 **get single user**
 ```
-curl -X GET -H "Accept: application/json" localhost:8080/myapp/api/{id}
+curl -X GET -H "Accept: application/json" localhost:8080/myapp/api/api/{id}
 ```
 (notice: id != uid, use "id" you get via list command mentioned in above)
 
 **update user**
 ```
-curl -H 'Content-Type: application/json' -X PUT -d '{"uid":777,"email":"alicenew@new.mail.com","name":"Alice-update"}' localhost:8080/myapp/user/{id}
+curl -H 'Content-Type: application/json' -X PUT -d '{"uid":777,"email":"alicenew@new.mail.com","name":"Alice-update"}' localhost:8080/myapp/api/user/{id}
 ```
 
 **delete user**
@@ -57,7 +57,7 @@ curl -X DELETE localhost:8080/myapp/api/user/{id}
 #### Auto Test (with robot framwork)
 ###### Endpoint 
 * (Website) http://localhost:8080/myapp/test/index
-* (REST API) http://localhost:8080/myapp/test/
+* (REST API) http://localhost:8080/myapp/api/test/
 * (Script path) **$project_path/scipts/mytest.robot**
 * Test will automatically run after user create a 'test' object
 * Auto test logs will save to `$project_path/myAutoTestLogs`
@@ -67,7 +67,7 @@ curl -X DELETE localhost:8080/myapp/api/user/{id}
 
 **create/run a test**
 ```
-curl -i -X POST -H "Content-Type: application/json" -d '{"name": "myFirstTest"}' localhost:8080/myapp/test
+curl -i -X POST -H "Content-Type: application/json" -d '{"name": "myFirstTest"}' localhost:8080/myapp/api/test
 ```
 
 ## WHAT I HAVE LEARNED 
